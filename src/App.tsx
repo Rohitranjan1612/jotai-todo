@@ -1,26 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Provider as JotaiProvider } from "jotai";
+
+import TodoList from "./components/TodoList";
+import TodoAdd from "./components/TodoAdd";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <JotaiProvider>
+      <TodoList />
+      <TodoAdd />
+    </JotaiProvider>
   );
 }
-
 export default App;
